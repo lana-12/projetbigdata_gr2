@@ -1,0 +1,13 @@
+pymongo
+sqlalchemy
+pydantic
+pandas
+openpyxl
+python-dotenv
+pyspark
+findspark
+unidecode
+matplotlib
+happybase
+thriftpy2==0.4.14
+Elasticsearch
