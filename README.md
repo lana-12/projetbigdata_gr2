@@ -141,7 +141,7 @@ python cleaned_data.py
 ./lance_srv_slaves.sh
 ```
 
-3. Téléverser ce dossier dans le dossier /root de la vm
+3. Téléverser ce dossier dans le dossier /root de la vm avec filezila
 
 4. Déplacer le dossier dans Hadoop
 ```bash
