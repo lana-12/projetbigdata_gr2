@@ -9,6 +9,62 @@
   - Alexis GUIZARD 
 
 ### Description :
+```
+Lot0 : Comprendre et de nettoyer les données fournies par le client.
+
+```
+
+```
+Lot1 : Création des jobs :
+  - Filtrer les données selon les critères suivants : 
+      - Entre 2006 et 2010
+      - Uniquement les départements 53, 61 et 28
+
+  - Ressortir dans un tableau des 100 meilleures commandes avec
+la ville, la somme des quantités des articles et la valeur de « timbrecde » (la notion
+de meilleures commandes : la somme des quantités la plus grande ainsi que le plus
+grand nombre de « timbrecde » )
+
+  - Exporter le résultat dans un fichier Excel.
+```
+
+```
+Lot2 : Création des jobs :
+  - Filtrer les données selon les critères suivants : 
+      - Entre 2011 et 2016
+      - Uniquement les départements 22, 49 et 53
+
+  - Ressortir de façon aléatoire de 5% des 100 meilleures
+commandes avec la ville, la somme des quantités des articles sans « timbrecli » (le
+timbrecli non renseigné ou à 0) avec la moyenne des quantités de chaque
+commande
+Avoir un PDF avec un graphe (PIE) (par Ville)
+
+  - Exporter le résultat dans un fichier Excel.
+```
+
+```
+Lot3 
+1. Mettre en place une base NoSQL HBASE pour stocker le contenu du fichier CSV
+2. Interroger la base de données NoSQL HBASE avec des scripts python.
+  - La meilleure commande de Nantes de l’année 2020.
+  - Le nombre total de commandes effectuées entre 2010 et 2015, réparties par année
+  - Le nom, le prénom, le nombre de commande et la somme des quantités d’objets du
+client qui a eu le plus de frais de timbrecde
+
+3. Créer un programme python (avec Panda) pour créer des graphes en pdf et des tableaux
+Excel et csv de votre importation dans HBase :
+  - Question 1 partie 1 du lot 3 en csv
+  - Question 2 partie 1 du lot 3 en barplot matplotib exporté en pdf
+  - Question 3 partie 1 du lot 3 en excel
+```
+
+```
+Lot4
+1. Mettre en œuvre un moteur de recherche avec ELK pour interroger HBase.
+2. Pour répondre au Lot 1 et Lot 2 au niveau des résultats avec les graphes
+3. Mise en place d’un Dashboard interactif
+```
 
 
 #### Cloner le dépôt :
@@ -104,7 +160,11 @@ hdfs dfs -put cleaned_data.csv input
 
 
 #### Exécuter les lots
-Voir Les dossiers correspondants
+
+Lot1 => voir /lot1/lot1.md
+Lot2 => voir /lot2/lot2.md
+Lot3 => voir /lot3/lot3.md
+Lot4 => voir /lot4/lot4.md
 
 
 #### Initialisation Elasticsearch
@@ -179,7 +239,6 @@ pythonApiGestionColisGr2/
 ├── lot4/                    
 │   ├── script_hbase.py     # Connexion à Elasticsearch      
 │   ├── lot4.md             # Commande è exécuter            
-│      
 │      
 │
 ├── .gitignore              # Fichiers et dossiers à ignorer par Git

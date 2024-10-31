@@ -10,7 +10,7 @@ Assurez-vous d'avoir : voir => Mettre en place l'espace de travail dans la VM + 
 hdfs dfs -rm -r outputjob01
 
 ## Exécuter le job Hadoop Streaming
-hadoop jar hadoop-streaming-2.7.2.jar -file mapperlot1.py -mapper "python3 mapperlot1.py" -file reducerlot1.py -reducer "python3 reducerlot1.py" -input input/csv -output outputjob01
+hadoop jar hadoop-streaming-2.7.2.jar -file mapperlot1.py -mapper "python3 mapperlot1.py" -file reducerlot1.py -reducer "python3 reducerlot1.py" -input input -output outputjob01
 
 
 
