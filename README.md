@@ -16,7 +16,7 @@
 #### 1. Cloner le dépôt :
 
 ```bash
-git clone https://github.com/aennasyry/pythonApiGestionColisGr2.git
+git clone https://github.com/lana-12/projetbigdata_gr2.git
 ```
 
 #### 2. Créer et activer un environnement virtuel :
@@ -60,8 +60,11 @@ pip install -r ./requirements.txt
 
 ```
 
+#### Exécuter les lots
+Voir Les dossiers correspondants
 
-### Initialisation Elasticsearch
+
+#### Initialisation Elasticsearch
 
 Plusieurs manières 
 
