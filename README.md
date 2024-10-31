@@ -111,7 +111,7 @@ Voir Les dossiers correspondants
 
 Plusieurs manières 
 
-1. Cloner un repo 
+1. Cloner un repo Git 
 ```bash
 git clone https://github.com/deviantony/docker-elk.git
 docker compose build
@@ -119,17 +119,21 @@ docker compose up
 ```
 
 2. Avec curl 
+Avoir Docker démarré
 ```bash
-
+curl -fsSL https://elastic.co/start-local | sh
 
 ```
 
 3. Télécharger Elasticsearch et kibana
+Ouvrir un terminal en tant que Administrateur
 ```bash
+./bin/elasticsearch
+./bin/kibana
 
+bin/elasticsearch-reset-password -u elastic
 
 ```
-
 
 
 ### Accès à Elasticsearch
@@ -163,6 +167,18 @@ pythonApiGestionColisGr2/
 │   ├── mapperlot2.py       
 │   ├── reducerlot2.py      
 │   ├── lot2.md/            # Commande è exécuter
+│      
+|
+├── lot3/                    
+│   ├── script_hbase.py     # Création de la table       
+│   ├── script_query1.py      
+│   ├── script_query2.py            
+│   ├── script_query3.py            
+│   ├── lot3.md             # Commande è exécuter    
+|        
+├── lot4/                    
+│   ├── script_hbase.py     # Connexion à Elasticsearch      
+│   ├── lot4.md             # Commande è exécuter            
 │      
 │      
 │
