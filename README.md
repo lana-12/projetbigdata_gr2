@@ -11,15 +11,13 @@
 ### Description :
 
 
-### Initialisation :
-
-#### 1. Cloner le dépôt :
+#### Cloner le dépôt :
 
 ```bash
 git clone https://github.com/lana-12/projetbigdata_gr2.git
 ```
 
-#### 2. Créer et activer un environnement virtuel :
+#### Créer et activer un environnement virtuel :
 
 ```python
 
@@ -44,21 +42,66 @@ source .venv/bin/activate
 
 ```
 
-#### 3. Désactivation :
+#### Désactivation :
 ```bash
 
 desactivate
 
 ```
 
-#### 4.Installer les dépendances :
-
+#### Installer les dépendances :
 
 Activer l environnement
 ```bash
 pip install -r ./requirements.txt
 
 ```
+#### Exécuter le lot0
+
+Nettoyer le fichier data
+```bash
+cd lot0
+python cleaned_data.py
+```
+
+
+#### Mettre en place l'espace de travail dans la VM + Hadoop
+
+1. Créer un dossier /projetbigdata qui contient 
+    - cleaned_data.csv
+    - mapperlot1.py
+    - reducerlot1.py
+    - mapperlot2.py
+    - reducerlot2.py
+
+2. Lancer la vm 
+```bash
+./start_docker_digi.sh
+./lance_srv_slaves.sh
+```
+
+3. Téléverser ce dossier dans le dossier /root de la vm
+
+4. Déplacer le dossier dans Hadoop
+```bash
+docker cp projetbigdata hadoop-master:/root/
+```
+
+5. Lancer Hadoop
+```bash
+./bash_hadoop_master.sh
+./start-hadoop.sh
+start-hbase.sh
+hbase-daemon.sh start thrift
+```
+
+6. Mettre le fichier csv dans HDFS
+```bash
+hdfs dfs -mkdir -p input
+cd projetbigdata
+hdfs dfs -put cleaned_data.csv input
+```
+
 
 #### Exécuter les lots
 Voir Les dossiers correspondants
@@ -103,20 +146,24 @@ http://127.0.0.1:9200/
 pythonApiGestionColisGr2/
 │
 ├── .venv/                  # Environnement virtuel
-│                  
 │
-├── config.py               # Configuration de l'application ;Contient les paramètres de configuration de la base des données
-│  
-│
-├── src/                    # Code source de l'application
-│   ├── main.py             # Point d'entrée de l'application
-│   ├── models/             # Modèles de Base de données:Contient les modèles SQLAlchemy
-│   │   
-│   ├── routers/            # Routes de l'application: Contient les routes FastAPI
-│   │   
-│   ├── schemas/            # Schémas de données (Pydantic): Contient les schémas de validation
-│   │   
-│   └── services/           # Services et logique métier
+├── data/                   # Données en csv
+│   ├── dataw_fro03.csv     # Fichier initial
+│   ├── cleaned_data.csv    # Fichier nettoyé
+│      
+├── lot0/                   
+│   ├── cleaned_data.csv.py # Code pour nettoyer le fichier de données
+│      
+├── lot1/                    
+│   ├── mapperlot1.py       
+│   ├── reducerlot1.py      
+│   ├── lot1.md/            # Commande è exécuter
+|
+├── lot2/                    
+│   ├── mapperlot2.py       
+│   ├── reducerlot2.py      
+│   ├── lot2.md/            # Commande è exécuter
+│      
 │      
 │
 ├── .gitignore              # Fichiers et dossiers à ignorer par Git

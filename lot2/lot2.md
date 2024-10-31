@@ -1,23 +1,10 @@
 # Exécuter le lot2
 
-## Copier le fichier JAR Hadoop Streaming dans le répertoire courant 
-cp /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar .
+Assurez-vous d'avoir : voir => Mettre en place l'espace de travail dans la VM + Hadoop dans le fichier README.md
 
-## Démarre services Hadoop
-./start-hadoop.sh
+1. Lancer les services Hadoop + HBase
+2. Créer le répertoire input et transférer le fichier de cleaned_data.csv
 
-## Démarre le service HBase
-start-hbase.sh
-hbase-daemon.sh start thrift
-
-## Créer un répertoire dans HDFS pour les données d'entrée
-hdfs dfs -mkdir -p input
-
-## Supprimer le fichier cleaned_data.csv dans HDFS
-hdfs dfs -rm input/cleaned_data.csv
-
-## Télécharger le fichier cleaned_data.csv vers HDFS
-hdfs dfs -put cleaned_data.csv input
 
 ## Supprimer le répertoire de sortie existant dans HDFS :
 hdfs dfs -rm -r outputjob02
