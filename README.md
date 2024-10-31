@@ -129,6 +129,11 @@ python cleaned_data.py
     - reducerlot1.py
     - mapperlot2.py
     - reducerlot2.py
+    - script_hbase.py
+    - script_query1.py
+    - script_query2.py
+    - script_query3.py
+
 
 2. Lancer la vm 
 ```bash
